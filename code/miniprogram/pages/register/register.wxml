@@ -1,0 +1,52 @@
+<!--pages/register/register.wxml-->
+<view class="wrapper">
+  <view class="head">
+    <view class="title_wrapper">
+      <view class="item">
+        <text>信息注册</text>
+      </view>
+    </view>
+  </view>
+  <view class="body">
+    <view class="content_wrapper"> 
+      <view class="item name">
+        <text class="fillInfo">姓名：</text>
+        <input type="text" placeholder="请填写真实姓名" maxlength="10" bindinput="inputName"></input>
+      </view>
+      <view class="item username">
+        <text class="fillInfo">用户名：</text>          
+        <input type="text" placeholder="请填写用户名" maxlength="15" bindinput="inputUserName"></input>
+      </view>
+      <view class="item username">
+        <text class="fillInfo">学号：</text>          
+        <input type="text" placeholder="请填写学号" maxlength="15" bindinput="inputSerial"></input>
+      </view>
+      <view class="item department">
+        <text class="fillInfo">部门:</text>
+        <radio-group class="radio-group" bindchange="radioDepChange">
+          <label class="radio" wx:for="{{radioItems}}" wx:key="index">              
+            <radio value="{{item.name}}" checked="{{item.checked}}" color="#fff"/>
+            {{item.value}}
+           </label>
+        </radio-group>
+      </view>
+      <view class="item sex">
+        <text class="fillInfo">性别：</text>
+        <radio-group class="radio-group" bindchange="radioSexChange">
+          <label class="radio" wx:for="{{sexradioItems}}"wx:key="index">
+            <radio value="{{item.name}}" checked="{{item.checked}}" color="#fff"/>
+            {{item.value}}
+          </label>
+        </radio-group>
+
+      </view>
+    </view>  
+  </view>
+  <view class="tail">
+    <view class="item">
+      <button class="button" bindtap="handleSubmit">
+        <text>提交</text>
+      </button>
+    </view>
+  </view>
+</view>

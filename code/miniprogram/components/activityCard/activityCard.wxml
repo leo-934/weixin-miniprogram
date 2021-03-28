@@ -1,0 +1,65 @@
+<!--components/activityCard/activityCard.wxml-->
+<view class="card clearfix">
+  <view class="left">
+    <view class="imgContainer">
+      <image class="leftDots" src="../../pages/data/imgs/png/leftDots.png"  mode="aspectFit"></image>
+    </view>
+    <view class="container">
+      <text class="index">{{index}}</text>
+    </view>
+  </view>
+  <view class="right_wrapper {{isFold?'':'unFold'}}" catchtap="handleFold" style="background-image:url('{{backgroundImageUrl}}');min-height：100％;">
+    <view class="title">{{item.title}}</view>
+    <view class="laucher other">活动发起人：{{item.launcher}}</view>
+    <view class="laucher other">部门：{{item.department}}</view>
+    <view  class="tags clearfix {{isFold?'hidden':'unhidden'}}">
+      <view wx:for="{{item.tags}}" wx:for-item="item" wx:for-index="singer" wx:key="index" class="tag" catchtap="nothing">
+        {{item}}
+      </view>
+    </view>
+    <view class="detail other {{isFold?'hidden':'unhidden'}}">
+      <view class="sepLineUp">—— ——</view>
+      <view class="detailText">简介：{{item.detailText}}</view>
+      <view class="sepLineDown">—— ——</view>
+    </view>
+    <view class="briefIntro other">
+      <view class="view">{{item.info.startTime.year}}-{{item.info.startTime.month}}-{{item.info.startTime.day}} {{item.info.startTime.hour}}:{{item.info.startTime.minute}}<text wx:if="{{item.info.endTime.year>item.info.startTime.year}}"> 至 {{item.info.endTime.year}}-{{item.info.endTime.month}}-{{item.info.endTime.day}}</text><text wx:elif="{{item.info.endTime.month>item.info.startTime.month || (item.info.endTime.month==item.info.startTime.month && item.info.endTime.day>item.info.startTime.day)}}"> 至 {{item.info.endTime.month}}-{{item.info.endTime.day}} {{item.info.endTime.hour}}:{{item.info.endTime.minute}}</text><text wx:elif="{{item.info.endTime.day==item.info.startTime.day}}"> 至 {{item.info.endTime.hour}}:{{item.info.endTime.minute}}</text></view>
+      <view class="view">地点：{{item.info.address}}</view>
+      <view class="view">报名人数：{{numberOfPeople}}</view>
+    </view>
+    <view class="state_bottom" catchtap="nothing">
+      <view wx:if="{{activityState==0}}" class="state_bottom {{isFold?'hidden':'unhidden'}}">
+        <view wx:if="{{!isSignUp && activityState==0}}" class="button" bindtap="handleSignUp" style="background-color:#12b7f5;font-size:35rpx;">
+          <text class="signUp">点击报名</text>
+        </view>
+        <view wx:if="{{isSignUp && activityState==0}}" class="button" catchtap="nothing">
+          <image class="check" src="../../pages/data/imgs/png/check.png" mode="aspectFit"></image>
+          <text class="signUp">已报名</text>
+        </view>
+        <view wx:if="{{isSignUp && activityState==0}}" class="button" catchtap="handleCancel">
+          <text class="signUp">取消报名</text>
+        </view>
+      </view>
+      <view wx:if="{{activityState==1}}" class="state_bottom {{isFold?'hidden':'unhidden'}}">
+        <view wx:if="{{isSignUp && !isSignIn}}" class="button" bindtap="handleSignIn" style="background-color:#12b7f5;font-size:35rpx;">
+          <text class="signIn">点击签到</text>
+        </view>
+        <view wx:if="{{isSignIn}}" class="button" bindtap="" style="font-size:35rpx;">
+          <text class="signIn">已签到</text>
+        </view>
+        <view wx:if="{{!isSignUp && !isSignIn}}" class="button" bindtap="" style="font-size:35rpx;">
+          <text class="signIn">未报名</text>
+        </view>
+      </view>
+      <view wx:if="{{activityState==2}}" class="state_bottom {{isFold?'hidden':'unhidden'}}">
+        <view  class="button" bindtap="" style="font-size:35rpx;">
+          <text class="signIn">已过期</text>
+        </view>
+      </view>
+    </view>
+    <image wx:if="{{isSignIn && isFold }}" class="state_upper clearfix check" src="../../pages/data/imgs/png/check.png"></image>
+    <image wx:elif="{{!isSignIn && isSignUp && isFold && activityState==1}}" class="state_upper clearfix signin" src="../../pages/data/imgs/png/signIn.png"></image>
+  </view>  
+</view>
+
+

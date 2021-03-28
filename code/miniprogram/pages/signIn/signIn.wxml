@@ -1,0 +1,34 @@
+<!--pages/signIn/signIn.wxml-->
+<view class="wrapper">
+  <view class="head">
+    <view class="title_wrapper">
+      <view class="item">
+        <text>签到</text>
+      </view>
+    </view>
+  </view>
+  <view class="head">
+    <view class="item name">
+        <text class="fillInfo">活动名称</text>
+        <input type="text"  bindinput="inputName" value="{{activityName}}" disabled="true"></input>
+      </view>
+    <view class="item number">
+      <text class="fillInfo">已报名人数</text>
+      <input type=""  bindinput="inputVerCode" value="{{activityNumberOfPeople}}" disabled="true"></input>
+    </view>
+    <view class="item verificationCode">
+      <text class="fillInfo">签到码</text>
+      <input type="number" placeholder="请输入4位签到码" maxlength="4" bindinput="inputVerCode"></input>
+    </view>
+  </view>
+  <view class="tail">
+    <view class="item">
+      <button class="button" bindtap="handleSignIn">
+        <text>签到</text>
+      </button>
+    </view>
+  </view>
+</view>
+
+
+

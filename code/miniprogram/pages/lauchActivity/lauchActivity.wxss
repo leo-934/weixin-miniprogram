@@ -1,0 +1,115 @@
+/* pages/lauchActivity/lauchActivity.wxss */
+page{
+  background-color: rgb(237,240,242);
+  overflow-x: hidden;
+}
+view, image{
+  overflow-x: hidden;
+}
+.head{
+  /* background-color: yellow; */
+  margin: 30rpx 0 50rpx;
+}
+.head .title_wrapper .item{
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: rgb(58,114,150);
+  text-shadow: 4rpx 4rpx rgba(58,114,150,.2);
+}
+.item{
+  background-color: rgb(245,245,245);
+  width: 92%;
+  height: 100rpx;
+  margin: 5rpx auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.item:first-child{
+  border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx;
+}
+.item:last-child{
+  border-bottom-left-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
+}
+.item input{
+  /* background-color: #bfa; */
+  width: 60%;
+  height: 65%;
+  font-size: 26rpx;
+}
+.item.intro{
+  height: 200rpx;
+  /* width: 90%; */
+  padding: 30rpx 0;
+  margin: 5rpx auto;
+  font-size: 26rpx;
+  /* box-sizing: border-box; */
+}
+.item .fillInfo{
+  margin:0 30rpx 0;
+  font-size: 30rpx;
+}
+
+.item .button{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(58,114,150);
+  color: rgb(245,245,245);
+}
+.tail .item {
+  margin: 55rpx auto 0;
+}
+
+@import "../picker/picker.wxss";
+
+.radio-group{
+  height: 60%;
+  width: 65%;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+}
+
+.radio-group radio{
+  height: 0rpx;
+  width: 20rpx;
+}
+.radio-group label.radio{
+  margin-right: 25rpx;
+}
+.radio .wx-radio-input{
+  width: 20rpx;
+  height: 20rpx;
+  position: relative;
+  top: -4.6rpx;
+  border: 0.5rpx solid rgb(128, 128, 128);
+  background: transparent;
+  color: white;
+}
+.radio .wx-radio-input.wx-radio-input-checked::before{
+  width: 30rpx;
+  height: 30rpx;
+  background-color:rgb(58,114,150);
+  border-radius: 50%;
+  content: '';
+  top:50%;
+  left: 50%;
+}
+
+#brefIntro{
+  height: 100%;
+  width: 73%;
+}

@@ -1,0 +1,71 @@
+<!--pages/lauchActivity/lauchActivity.wxml-->
+<view class="wrapper">
+  <view class="head">
+    <view class="title_wrapper">
+      <view class="item">
+        <text>请填写活动信息</text>
+      </view>
+    </view>
+  </view>
+  <view class="body">
+    <view class="content_wrapper">
+      <view class="item name">
+        <text class="fillInfo">活动名称</text>
+        <input type="text" placeholder="2021跨年活动" maxlength="15" bindinput="inputName"></input>
+      </view>
+      <view class="item tags">
+        <text class="fillInfo">活动标签</text>
+        <input type="text" placeholder="娱乐 跨年活动" bindinput="inputTags"></input>
+      </view>
+      <view class="item department">
+        <text class="fillInfo">参加部门</text>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio" wx:for="{{radioItems}}" wx:key="index">
+            <radio value="{{item.name}}" checked="{{item.checked}}" color='#fff'/>
+            {{item.value}}
+          </label>
+        </radio-group>
+      </view>
+      <view class="item intro">
+        <text class="fillInfo">活动简介</text>
+        <!-- <input type="text" placeholder="……"></input> -->
+        <textarea name="brefIntro" id="brefIntro" cols="18" rows="6" placeholder="一起吃吃喝喝balabala……" bindinput="inputIntro"></textarea>
+      </view>
+      <view class="item address">
+        <text class="fillInfo">举办地点</text>
+        <input type="text" placeholder="启真湖底" bindinput="inputAddress"></input>
+      </view>
+      <view class="item timeStart">
+        <text class="fillInfo">开始时间</text>
+        <!-- <input type="text" placeholder="2021-1-13, 18:00"></input> -->
+        <view class="tui-picker-content">
+          <picker mode="multiSelector" value="{{startTime.dateTime1}}" bindchange="changeDateTime1" data-id="1" range="{{startTime.dateTimeArray1}}">
+             <view class="tui-picker-detail">
+              {{startTime.dateTimeArray1[0][startTime.dateTime1[0]]}}-{{startTime.dateTimeArray1[1][startTime.dateTime1[1]]}}-{{startTime.dateTimeArray1[2][startTime.dateTime1[2]]}} {{startTime.dateTimeArray1[3][startTime.dateTime1[3]]}}:{{startTime.dateTimeArray1[4][startTime.dateTime1[4]]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="item timeEnd">
+        <text class="fillInfo">结束时间</text>
+        <!-- <input type="text" placeholder="2021-1-13, 20:30"></input> -->
+        <view class="tui-picker-content">
+          <picker mode="multiSelector" value="{{endTime.dateTime1}}" bindchange="changeDateTime1" data-id="2" range="{{endTime.dateTimeArray1}}">
+             <view class="tui-picker-detail">
+              {{endTime.dateTimeArray1[0][endTime.dateTime1[0]]}}-{{endTime.dateTimeArray1[1][endTime.dateTime1[1]]}}-{{endTime.dateTimeArray1[2][endTime.dateTime1[2]]}} {{endTime.dateTimeArray1[3][endTime.dateTime1[3]]}}:{{endTime.dateTimeArray1[4][endTime.dateTime1[4]]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="tail">
+    <view class="item">
+      <button class="button" bindtap="handleSubmit">
+        <text>提交</text>
+      </button>
+    </view>
+  </view>
+</view>
+
+

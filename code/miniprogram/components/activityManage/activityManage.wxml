@@ -1,0 +1,36 @@
+<!--components/activityManage/activityManage.wxml-->
+<view class="card clearfix">
+  <view class="left">
+    <view class="imgContainer">
+      <image class="leftDots" src="../../pages/data/imgs/png/leftDots.png"  mode="aspectFit"></image>
+    </view>
+    <view class="container">
+      <text class="index">{{index}}</text>
+    </view>
+  </view>
+  <view class="right_wrapper {{isFold?'':'unFold'}}" catchtap="handleFold" style="background-image:url('{{backgroundImageUrl}}');min-height：100％;">
+    <view class="title">{{item.title}}</view>
+    <view class="laucher other">活动发起人：{{item.launcher}}</view>
+    <view class="laucher other">部门：{{item.department}}</view>
+    <view  class="tags clearfix {{isFold?'hidden':'unhidden'}}">
+      <view wx:for="{{item.tags}}" wx:for-item="item" wx:for-index="singer" wx:key="index" class="tag" catchtap="nothing">
+        {{item}}
+      </view>
+    </view>
+    <view class="detail other {{isFold?'hidden':'unhidden'}}">
+      <view class="sepLineUp">—— ——</view>
+      <view class="detailText">简介：{{item.detailText}}</view>
+      <view class="sepLineDown">—— ——</view>
+    </view>
+    <view class="briefIntro other">
+      <view class="view">{{item.info.startTime.year}}-{{item.info.startTime.month}}-{{item.info.startTime.day}} {{item.info.startTime.hour}}:{{item.info.startTime.minute}}<text wx:if="{{item.info.endTime.year>item.info.startTime.year}}"> 至 {{item.info.endTime.year}}-{{item.info.endTime.month}}-{{item.info.endTime.day}}</text><text wx:elif="{{item.info.endTime.month>item.info.startTime.month || (item.info.endTime.month==item.info.startTime.month && item.info.endTime.day>item.info.startTime.day)}}"> 至 {{item.info.endTime.month}}-{{item.info.endTime.day}} {{item.info.endTime.hour}}:{{item.info.endTime.minute}}</text><text wx:elif="{{item.info.endTime.day==item.info.startTime.day}}"> 至 {{item.info.endTime.hour}}:{{item.info.endTime.minute}}</text></view>
+      <view class="view">地点：{{item.info.address}}</view>
+      <view class="view">报名人数：{{numberOfPeople}}</view>
+    </view>
+    <view class="state_bottom" catchtap="nothing">
+      <view class="button  {{isFold?'hidden':'unhidden'}}" bindtap="handleLookover" style="background-color:#12b7f5;font-size:35rpx;">
+        <text class="signUp">详情</text>
+      </view>
+    </view>
+  </view>
+</view>

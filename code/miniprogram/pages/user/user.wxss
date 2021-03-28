@@ -1,0 +1,122 @@
+.clearfix::after,
+.clearfix::before{
+  content: "";
+  display: table;
+  clear: both;
+}
+page{
+  margin-bottom: 155rpx;
+  overflow-x: hidden;
+}
+
+.background{
+  width: 900rpx;
+  height: 900rpx;
+  position: absolute;
+  align-self: center;
+  top: -330rpx;
+  left: -75rpx;
+  /* background-color: #bfa; */
+  border-radius: 50%;
+  /* background-image: url(); */
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+}
+.head{
+  /* background-color: #bfa; */
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 20rpx; */
+}
+.head .portrait{
+  padding-top: 40rpx;
+  height: 220rpx;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color:red; */
+}
+
+.portrait .content-left{
+  height: 200rpx;
+  width: 200rpx;
+}
+.portrait .content-left image{
+  width: 100%;
+  height: 100%;
+}
+.head .infolist{
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-shadow: 5rpx 5rpx 3rpx rgba(0, 0, 0, .2);
+}
+.head .infolist view.nickname{
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 42rpx;
+}
+.head .infolist view.nickname .text{
+  position: relative;
+  margin: 20rpx 0 10rpx;
+}
+.head .infolist view.nickname image{
+  height: 1em;
+  width: 0.4em;
+  /* margin-left: 30rpx; */
+  position: absolute;
+  right: -1em;
+  top: 0.2em;
+}
+.head .infolist view.department{
+  align-self: center;
+  font-size: 34rpx;
+  margin: 0 0 20rpx;
+}
+
+.body .activity_wrapper{
+  width: 90%;
+  min-height: 500rpx;
+  background-color: white;
+  margin: 30rpx auto;
+  border-radius: 80rpx;
+}
+
+.body .activity_wrapper .buttons{
+  /* padding-top: 45rpx;
+  padding-left: 70rpx; */
+  padding: 22rpx 35rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: green; */
+}
+.body .activity_wrapper .buttons .button{
+  transition: 0.3s;
+  height: 80rpx;
+  width: 180rpx;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  color: rgb(58, 114, 150);
+  margin: 0 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.body .activity_wrapper .buttons .button.active{
+  background-color: rgb(237,240,242);
+}
+.body .content_wrapper{
+  min-height: 200rpx;
+  /* background-color: #bfa; */
+  position: relative;
+}

@@ -1,0 +1,170 @@
+/* components/activityCard/activityCard.wxss */
+.clearfix::before,
+.clearfix::after{
+  clear: both;
+  display: table;
+  content: "";
+}
+.card{
+  /* background-color: #bfa; */
+  width: 100%;
+  padding: 4%;
+  display: flex;
+  flex-direction: row;
+}
+.card .left{
+  position: relative;
+  height: 253rpx;
+  width: 12%;
+}
+.card .left .imgContainer{
+  height: 100%;
+  width: 100%;
+}
+.card .left .leftDots{
+  width: 100%;
+  height: 100%;
+}
+.card .left .container{
+  width: 10.44%;
+  height: 15%;
+  /* background-color: rgba(255,0,0,.2); */
+  top: 12.5%;
+  left: 36%;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .left .container .index{
+  font-size: 110%;
+  color: white;
+}
+.card .right_wrapper{
+  background-repeat: repeat;
+  /* background-size: cover; */
+  background-size: 100% 99.9%;
+  background-position: center;
+  background-color: rgb(58,114,150);
+  float: left;
+  width: 75%;
+  height: 300rpx;
+  margin-left: 3.77%;
+  padding: 2.3% 60rpx;
+  box-sizing: border-box;
+  border-radius: 50rpx;
+  color: white;
+  text-shadow: 4rpx 4rpx rgba(0,0,0,.2);
+  box-shadow: 12rpx 12rpx 5rpx rgba(100,100,100,.1);
+  transition: height 1s, 1s;
+  overflow: hidden;
+  position: relative;
+}
+
+.card .right_wrapper.unFold{
+  height: 700rpx;
+}
+.card .right_wrapper .hidden{
+  height: 0 !important;
+  overflow: hidden !important;
+  transition: 1s !important;
+}
+.card .right_wrapper .unhidden{
+  transition: 1s !important;
+  overflow: hidden;
+}
+.card .right_wrapper .title{
+  font-size: large;
+}
+.card .right_wrapper .other{
+  font-size: 24rpx;
+}
+.card .right_wrapper .laucher{
+  margin: 8rpx 0;
+}
+.card .right_wrapper .tags{
+  height: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+}
+.card .right_wrapper .tags .tag{
+  background-color: rgb(242,242,242);
+  color: rgb(179,179,179);
+  float: left;
+  text-shadow: none;
+  /* width: 140rpx; */
+  padding:0 15rpx;
+  height: 2em;
+  line-height: 2em;
+  font-size: 24rpx;
+  text-align: center;
+  margin-right: 20rpx;
+  border-radius: 1em;
+}
+.card .right_wrapper .detail{
+  margin: 0;
+  height: 230rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #bfa; */
+  overflow: hidden;
+  position: relative;
+}
+.card .right_wrapper .detail .sepLineUp{
+  position: absolute;
+  top: 0;
+}
+.card .right_wrapper .detail .sepLineDown{
+  position: absolute;
+  bottom: 0;
+}
+.card .right_wrapper .briefIntro .view{
+  margin: 10rpx 0;
+}
+.card .right_wrapper .state_bottom{
+  height: 2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.card .right_wrapper .state_bottom .button{
+  background-color: rgb(230,230,230);
+  margin: 20rpx;
+  width: 180rpx;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .right_wrapper .state_bottom .button .check{
+  height: 2em;
+  width: 50rpx;
+}
+
+.card .right_wrapper .state_upper.check{
+  height: 40rpx;
+  width: 40rpx;
+  position: absolute;
+  top: 48rpx;
+  right: 48rpx;
+}
+
+.card .right_wrapper .state_upper.signin{
+  height: 40rpx;
+  width: 40rpx;
+  position: absolute;
+  top: 48rpx;
+  right: 48rpx;
+}

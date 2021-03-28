@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "activityCard":"../../components/activityCard/activityCard",
+    "activityManage":"../../components/activityManage/activityManage"
+  }
+}

@@ -1,0 +1,50 @@
+<!--pages/user/user.wxml-->
+<!--pages/user/user.wxml-->
+<view class="page">
+  <view class="background" style="background-image:url({{backgroundImg}});"></view>
+  <view class="head clearfix">
+    <view class="portrait">
+      <view class="content-left">
+        <image src="{{portraitSrc}}" mode="scaleToFill"></image>
+      </view>
+    </view>
+    <view class="infolist">
+        <view class="nickname">
+          <view class="text">
+            <text>{{personalInfo.userName}}</text>
+            <image class="sex" src="{{personalInfo.sex=='男'?'../data/imgs/png/male.png':'../data/imgs/png/female.png'}}"></image>
+          </view>
+        </view>
+        <view class="department">
+            <text class="bumen">{{personalInfo.department}}部门 </text>
+            <text wx:if="{{personalInfo.zhiwei == 0}}">社员</text><text wx:elif="{{personalInfo.zhiwei == 1}}">部长</text><text wx:elif="{{personalInfo.zhiwei == 2}}">社长</text><text wx:else>内鬼</text>
+        </view>
+      </view>
+  </view>
+  <view class="body clearfix">
+    <view class="activity_wrapper">
+      <view class="buttons">
+        <view class="button involve {{button_choose==0?'active':''}}" bindtap="handleClick_button_involve">
+          <text>参与活动</text>
+        </view>
+        <view class="button history {{button_choose==1?'active':''}}" bindtap="handleClick_button_history">
+          <text>历史活动</text>
+        </view>
+        <view class="button manage {{button_choose==2?'active':''}}" bindtap="handleClick_button_manage">
+          <text>管理活动</text>
+        </view>
+      </view>
+      <view class="content_wrapper">
+        <view wx:if="{{button_choose == 0 }}" wx:for="{{cardList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+          <activityCard item="{{item}}" index="{{index+1}}"/>
+        </view>
+        <view wx:if="{{button_choose == 1 }}" wx:for="{{cardList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+          <activityCard item="{{item}}" index="{{index+1}}"/>
+        </view>
+        <view wx:if="{{button_choose == 2}}" wx:for="{{cardList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+          <activityManage item="{{item}}" index="{{index+1}}"/>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

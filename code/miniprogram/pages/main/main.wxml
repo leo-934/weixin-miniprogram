@@ -1,0 +1,39 @@
+<!--pages/main/main.wxml-->
+<view class="page">
+  <view class="head">
+    <view class="welcome">Hi {{name}}</view>
+    <view class="date">{{date}}</view>
+    <view class="tips">{{(todayActivityList.length)?"今日有"+todayActivityList.length+"项活动哟":"今日暂无活动哟"}}</view>
+  </view>
+  <view class="body">
+    <view class="content_round"></view>
+    <view class="content_wrapper">
+      <view class="filter_bar clearfix {{filterOpen? '': 'unchosen'}}" >
+        <view wx:if="{{filterOpen}}" class="left_content">
+          <view class="item text {{chooseId == 0 ? 'active':''}}" bindtap="handleFilter" data-id="0">全部活动</view>
+          <view class="item sep">|</view>
+          <view class="item text {{chooseId == 1 ? 'active':''}}" bindtap="handleFilter" data-id="1">TG</view>
+          <view class="item sep">|</view>
+          <view class="item text {{chooseId == 2 ? 'active':''}}" bindtap="handleFilter" data-id="2">CG</view>
+          <view class="item sep">|</view>
+          <view class="item text {{chooseId == 3 ? 'active':''}}" bindtap="handleFilter" data-id="3">OG</view>
+          <view class="item sep">|</view>
+          <view class="item text {{chooseId == 4 ? 'active':''}}" bindtap="handleFilter" data-id="4">PG</view>
+        </view>
+        <view class="right_icon" bindtap="handleFilterChosen">
+            <image src="{{filterOpen?'../data/imgs/png/filter_chosen.png':'../data/imgs/png/filter_unchosen.png'}}" mode="aspectFit"></image>
+          </view>
+      </view>
+      <view class="activity_list" style="min-height:400rpx">
+        <view wx:if="{{cardList.length!=0}}">
+          <view  wx:for="{{cardList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+            <activityCard item="{{item}}" index="{{index+1}}"/>
+          </view>
+        </view>
+        <view wx:else class="fillTextContainer">
+          <text class="fillText">再怎么找也找不到啦</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

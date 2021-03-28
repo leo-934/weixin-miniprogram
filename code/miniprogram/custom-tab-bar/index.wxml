@@ -1,0 +1,14 @@
+<!--miniprogram/custom-tab-bar/index.wxml-->
+<view class="tab-bar">
+  <view class="mybox">
+  <view wx:for="{{list}}" wx:key="index" class="tab-bar-item" >
+    <view class="imgContainer" data-path="{{item.pagePath}}" data-index="{{index}}" bindtap="switchTab">
+      <image class="image" src="{{selected === index ? item.selectedIconPath : item.iconPath}}"></image>
+    </view>
+  </view>
+  </view>
+  <view wx:if="{{authority>=1}}" class="middle clearfix" >
+    <image class="image" src="{{lauchImg}}" bindtap="handleLauch"></image>
+  </view>
+</view>
+

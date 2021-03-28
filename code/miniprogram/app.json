@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/activityDetail/activityDetail",
+    "pages/enrollerInfo/enrollerInfo",
+    "pages/register/register",
+    "pages/user/user",
+    "pages/main/main",
+    "pages/lauchActivity/lauchActivity",
+    "pages/signIn/signIn",
+    "pages/participatorInfo/participatorInfo"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "活动签到系统",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "iconPath": "pages/data/imgs/png/4.png",
+        "selectedIconPath": "pages/data/imgs/png/4.png",
+        "text": "组件"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "pages/data/imgs/png/5.png",
+        "selectedIconPath": "pages/data/imgs/png/5.png",
+        "text": "接口"
+      }
+    ]
+  }
+}
